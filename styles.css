@@ -1,0 +1,203 @@
+*,
+*:before,
+*:after {
+  box-sizing:border-box;
+}
+
+body {
+  margin:0px;
+  background-color:#F5F5F5;
+  color:#363636;
+  font-family:'biryani';
+}
+
+nav {
+  position:fixed;
+  left:0px;
+  top:0px;
+  height:100vh;
+  width:90px;
+  background-color:#fff;
+}
+
+nav .logo {
+  margin-top:10px;
+  margin-bottom:200px;
+}
+
+nav img {
+  width:100%;
+  padding:5px;
+  box-sizing:border-box;
+}
+
+nav ul {
+  padding:0px;
+  margin:0px;
+}
+
+nav ul li {
+  list-style-type: none;
+  padding:10px;
+}
+
+button,
+a {
+  background-color:#1CA3BA;
+  padding:12px 30px;
+  color:#fff;
+  border-radius:40px;
+  text-decoration:none;
+  font-size:15px;
+  line-height:19px;
+  text-transform:uppercase;
+}
+
+.main-content {
+  margin-left:90px;
+  overflow:auto;
+  padding:30px;
+}
+
+.card {
+  border-radius:4px;
+  box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.05);
+  background-color:#fff;
+  padding:20px 20px 30px;
+  margin-bottom:20px;
+}
+
+.intro-card {
+  background: linear-gradient(to left, #E3F4F6, #8ED1DC);
+  position:relative;
+  padding:30px 30px 35px;
+}
+
+.intro-card p {
+  margin:0px;
+  font-size:20px;
+  font-weight:600;
+}
+
+.intro-card .close {
+  position:absolute;
+  top:20px;
+  right:20px;
+  background-color:transparent;
+  margin:0px;
+  padding:0px;
+  border:0;
+  max-width:15px;
+}
+
+.intro-card .close img {
+  width:100%;
+}
+
+.quick-cards-wrap {
+  display:block;
+  width:100%;
+  overflow:auto;
+}
+
+.quick-stats-card {
+  width:30%;
+  margin-right:5%;
+  float:left;
+}
+.quick-stats-card:nth-of-type(3) {
+  margin-right:0px;
+}
+
+.quick-stats-card .title,
+.quick-stats-card .output {
+  margin:0px;
+}
+
+.quick-stats-card .title {
+  margin-bottom:10px;
+  text-transform:uppercase;
+}
+
+.quick-stats-card .output {
+  font-size:18px;
+  font-weight:600;
+}
+
+.accounts-card {
+  background-color:transparent;
+  box-shadow:unset;
+  margin-top:20px;
+}
+
+.accounts-card header,
+.recent-transactions-card header {
+  margin-bottom:20px;
+  overflow:auto;
+}
+
+.accounts-card header h2,
+.recent-transactions-card header h2 {
+  float:left;
+  margin:0px;
+}
+.accounts-card header .button,
+.recent-transactions-card header .button {
+  float:right;
+}
+
+.accounts-card .accounts-list {
+  padding:0px;
+  margin:0px;
+}
+
+.accounts-card .accounts-list li {
+  margin-bottom:10px;
+  background-color:#fff;
+  border-radius:4px;
+  overflow:auto;
+  padding:10px 20px;
+}
+
+.accounts-card .accounts-list li .icon {
+  width:30%;
+  float:left;
+}
+
+.accounts-card .accounts-list li .icon img {
+  max-width:45px;
+  width:100%;
+}
+
+.accounts-card .accounts-list li p {
+  margin:14px 0px;
+}
+
+.accounts-card .accounts-list li .account {
+  width:40%;
+  float:left;
+}
+
+.accounts-card .accounts-list li .type {
+  width:30%;
+  float:left;
+}
+
+.recent-transactions-card .recent-transactions {
+  width:100%;
+}
+
+table thead tr th {
+  text-align:left;
+}
+
+.column1,
+.column2 {
+  width:48%;
+  float:left;
+  margin-right:4%;
+}
+
+.column2 {
+  margin-right:0px;
+}
