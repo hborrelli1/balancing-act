@@ -11,6 +11,10 @@ body {
   font-family:'biryani';
 }
 
+h1 {
+  margin-top:0px;
+}
+
 nav {
   position:fixed;
   left:0px;
@@ -63,14 +67,14 @@ a {
   border-radius:4px;
   box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.05);
   background-color:#fff;
-  padding:20px 20px 30px;
+  padding:20px;
   margin-bottom:20px;
 }
 
 .intro-card {
   background: linear-gradient(to left, #E3F4F6, #8ED1DC);
   position:relative;
-  padding:30px 30px 35px;
+  padding:30px;
 }
 
 .intro-card p {
@@ -165,12 +169,12 @@ a {
 }
 
 .accounts-card .accounts-list li .icon img {
-  max-width:45px;
+  max-width:35px;
   width:100%;
 }
 
 .accounts-card .accounts-list li p {
-  margin:14px 0px;
+  margin:8px 0px;
 }
 
 .accounts-card .accounts-list li .account {
@@ -187,8 +191,25 @@ a {
   width:100%;
 }
 
-table thead tr th {
+table {
+  border-collapse: collapse;
+}
+
+table thead tr {
   text-align:left;
+  border-bottom:1px solid #CCCCCC;
+}
+
+table thead tr th {
+  padding-bottom:5px;
+}
+
+table tbody tr  {
+  border-bottom:2px solid #CCCCCC;
+}
+
+table tbody tr td {
+  padding:10px 0px 5px;
 }
 
 .column1,
