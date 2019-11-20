@@ -5,7 +5,10 @@
     <link href="https://fonts.googleapis.com/css?family=Biryani&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Custom JS -->
+    <script type="text/javascript" src="main.js">
 
+    </script>
     <title>Balancing Act</title>
   </head>
   <body>
@@ -26,9 +29,9 @@
 
       <div class="column1">
 
-        <section class="card intro-card">
+        <section id="intro-box" class="card intro-card">
           <p>Welcome, Oscar!</p>
-          <button class="close" type="button"><img src="assets/close.svg" alt="Close"></button>
+          <button class="close" type="button" onclick="closeIntro()"><img src="assets/close.svg" alt="Close"></button>
         </section>
 
         <div class="quick-cards-wrap">
@@ -38,20 +41,20 @@
           </section>
 
           <section class="card quick-stats-card">
-            <h5 class="title">Income</h5>
-            <p class="output">$2,119.12</p>
+            <h5 class="title">Expenses</h5>
+            <p class="output">$420.54</p>
           </section>
 
           <section class="card quick-stats-card">
-            <h5 class="title">Income</h5>
-            <p class="output">$2,119.12</p>
+            <h5 class="title">Credit Score</h5>
+            <p class="output">673</p>
           </section>
         </div>
 
         <section class="accounts-card">
           <header>
             <h2>Accounts</h2>
-            <a href="#" class="button">Manage Accounts</a>
+            <button class="button">Manage Accounts</button>
           </header>
           <ul class="accounts-list">
             <li>
@@ -90,7 +93,7 @@
         <section class="card recent-transactions-card">
           <header>
             <h2>Recent Transactions</h2>
-            <a href="#" class="button">New Transactions</a>
+            <button class="button">New Transactions</button>
           </header>
           <table class="recent-transactions">
             <thead>

@@ -20,7 +20,7 @@ nav {
   left:0px;
   top:0px;
   height:100vh;
-  width:90px;
+  width:80px;
   background-color:#fff;
 }
 
@@ -42,23 +42,42 @@ nav ul {
 
 nav ul li {
   list-style-type: none;
-  padding:10px;
+  margin-bottom:10px;
+  border-left:4px solid transparent;
+  cursor:pointer;
+}
+
+nav ul li:hover {
+  border-left:4px solid #1CA3BA;
+}
+
+nav ul li img {
+  padding:0px 20px;
 }
 
 button,
 a {
   background-color:#1CA3BA;
-  padding:12px 30px;
+  padding:9px 20px;
   color:#fff;
   border-radius:40px;
   text-decoration:none;
   font-size:15px;
   line-height:19px;
   text-transform:uppercase;
+  cursor:pointer;
+  letter-spacing:1px;
+  transition:all .3s;
+}
+
+button:hover,
+a:hover {
+  background-color:#127f92;
+  transition:all .3s;
 }
 
 .main-content {
-  margin-left:90px;
+  margin-left:80px;
   overflow:auto;
   padding:30px;
 }
@@ -160,7 +179,7 @@ a {
   background-color:#fff;
   border-radius:4px;
   overflow:auto;
-  padding:10px 20px;
+  padding:6px 20px;
 }
 
 .accounts-card .accounts-list li .icon {
@@ -175,6 +194,7 @@ a {
 
 .accounts-card .accounts-list li p {
   margin:8px 0px;
+  line-height:30px;
 }
 
 .accounts-card .accounts-list li .account {
@@ -210,6 +230,7 @@ table tbody tr  {
 
 table tbody tr td {
   padding:10px 0px 5px;
+  font-size:15px;
 }
 
 .column1,
