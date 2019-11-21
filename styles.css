@@ -68,6 +68,7 @@ a {
   cursor:pointer;
   letter-spacing:1px;
   transition:all .3s;
+  border:0;
 }
 
 button:hover,
@@ -98,7 +99,7 @@ a:hover {
 
 .intro-card p {
   margin:0px;
-  font-size:20px;
+  font-size:18px;
   font-weight:600;
 }
 
@@ -138,12 +139,13 @@ a:hover {
 }
 
 .quick-stats-card .title {
-  margin-bottom:10px;
+  margin-bottom:5px;
   text-transform:uppercase;
+  font-size:12px;
 }
 
 .quick-stats-card .output {
-  font-size:18px;
+  font-size:16px;
   font-weight:600;
 }
 
@@ -155,7 +157,7 @@ a:hover {
 
 .accounts-card header,
 .recent-transactions-card header {
-  margin-bottom:20px;
+  margin-bottom:10px;
   overflow:auto;
 }
 
