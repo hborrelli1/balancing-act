@@ -95,6 +95,8 @@ main {
   background: linear-gradient(to left, #E3F4F6, #8ED1DC);
   position:relative;
   padding:30px;
+  margin-top:0px;
+  transition:all .5s;
 }
 
 .intro-card p {
@@ -117,6 +119,22 @@ main {
 .intro-card .close img {
   width:100%;
 }
+
+.intro-card.hidden {
+  /* animation-duration: 3s;
+  animation-name: slideup; */
+  margin-top:-112px;
+  transition:all .5s;
+}
+/* @keyframes slideup {
+  from {
+     margin-top: 0;
+   }
+
+   to {
+     margin-top: -92px;
+   }
+} */
 
 .quick-cards-wrap {
   display:block;
@@ -241,6 +259,7 @@ table tbody tr td {
   width:48%;
   float:left;
   margin-right:4%;
+  overflow:hidden;
 }
 
 .column2 {
