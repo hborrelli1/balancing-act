@@ -5,8 +5,6 @@ closeBtn.addEventListener("click", closeIntro);
 
 function closeIntro() {
 
-  // console.log('clicked');
-  // console.log('clicked');
   // Add class to intro-box that changes margin-top
   document.getElementById("intro-box").classList.add('hidden');
 
