@@ -121,20 +121,9 @@ main {
 }
 
 .intro-card.hidden {
-  /* animation-duration: 3s;
-  animation-name: slideup; */
   margin-top:-112px;
   transition:all .5s;
 }
-/* @keyframes slideup {
-  from {
-     margin-top: 0;
-   }
-
-   to {
-     margin-top: -92px;
-   }
-} */
 
 .quick-cards-wrap {
   display:block;
