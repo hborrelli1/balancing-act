@@ -1,6 +1,5 @@
 var closeBtn = document.querySelector("#close");
 
-
 closeBtn.addEventListener("click", closeIntro);
 
 function closeIntro() {
