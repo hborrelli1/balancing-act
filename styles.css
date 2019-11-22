@@ -105,7 +105,7 @@ main {
   font-weight:600;
 }
 
-.intro-card .close {
+.intro-card #close {
   position:absolute;
   top:20px;
   right:20px;
@@ -116,7 +116,7 @@ main {
   max-width:15px;
 }
 
-.intro-card .close img {
+.intro-card #close img {
   width:100%;
 }
 
