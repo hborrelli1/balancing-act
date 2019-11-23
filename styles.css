@@ -47,7 +47,8 @@ nav ul li {
   cursor:pointer;
 }
 
-nav ul li:hover {
+nav ul li:hover,
+nav ul li.active {
   border-left:4px solid #1CA3BA;
 }
 
