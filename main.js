@@ -10,12 +10,13 @@ closeBtn.addEventListener("click", closeIntro);
 
 function closeIntro() {
   // Add class to intro-box that changes margin-top
-  document.getElementById("intro-box").classList.add('hidden');
+  var introBox = document.getElementById("intro-box");
+  introBox.classList.add('hidden');
 
-  // Timeout function to add display: none; to box after
-  // it slides out of view
+  // Remove introBox once CSS transition is complete
   function hideBox() {
-    document.getElementById("intro-box").style.display = "none";
+    // Remove element
+    introBox.remove();
   }
 
   setTimeout(hideBox, 500);
