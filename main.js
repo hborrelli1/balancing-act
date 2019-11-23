@@ -1,3 +1,4 @@
+// Global Variables
 var closeBtn = document.querySelector('#close');
 var dashboardBtn = document.querySelector('#dashboard-btn');
 var transactionsBtn = document.querySelector('#transactions-btn');
@@ -5,14 +6,14 @@ var profileBtn = document.querySelector('#profile-btn');
 var dashboardContent = document.querySelector('#dashboard-content');
 var transactionsContent = document.querySelector('#transactions-content');
 
-/*
- * Close Intro Box Even Listener and Function
- */
-
+// Event Listeners
 dashboardBtn.addEventListener('click', activateDashboard);
 transactionsBtn.addEventListener('click', activateTransactions);
 closeBtn.addEventListener("click", closeIntro);
 
+/*
+ * Close Intro Box Even Listener and Function
+ */
 function closeIntro() {
   // Add class to #intro-box that changes margin-top
   var introBox = document.getElementById("intro-box");
@@ -28,10 +29,8 @@ function closeIntro() {
 }
 
 /*
- * Swap class when clicking on different nav items
+ * Activate Transactions View
  */
-
-// add active to transactions nav item
 function activateTransactions() {
   // Remove classes from other nav items
   dashboardBtn.classList.remove('active');
@@ -39,7 +38,7 @@ function activateTransactions() {
   // Add class to clicked element
   transactionsBtn.classList.add('active');
 
-  // dashboardContent.innerHTML = "";
+  // Toggle Content
   dashboardContent.style.display = "none";
   transactionsContent.style.display = "block";
   transactionsContent.innerHTML = `<header>
@@ -196,12 +195,16 @@ function activateTransactions() {
   </section>`;
 }
 
-// Add active class to Dashboard nav item
+/*
+ * Activate Dashboard View
+ */
 function activateDashboard() {
+  // Remove classes from other nav items
   profileBtn.classList.remove('active');
   transactionsBtn.classList.remove('active');
+  // Add classes to clicked element
   dashboardBtn.classList.add('active');
-  // transactionsContent.innerHTML = "";
+  // Toggle Content
   transactionsContent.style.display = "none";
   dashboardContent.style.display = "block";
 }
