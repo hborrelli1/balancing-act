@@ -43,7 +43,7 @@ function activateTransactions() {
   transactionsContent.innerHTML = `<header>
     <h1>Transactions</h1>
     <section class="button-block">
-      <button class="button">All</button>
+      <button class="button active">All</button>
       <button class="button">Inflow</button>
       <button class="button">Outflow</button>
     </section>

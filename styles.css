@@ -350,3 +350,19 @@ table tbody tr td {
   background-color:#127f92;
   transition:all .3s;
 }
+
+#transactions-content .button-block .button {
+  background-color:transparent;
+  color:#1CA3BA;
+  border:2px solid #1CA3BA;
+}
+
+#transactions-content .button-block .button.active {
+  background-color:#1CA3BA;
+  color:#fff;
+}
+
+#transactions-content .button-block .button:hover {
+  background-color:#1CA3BA;
+  color:#fff;
+}
