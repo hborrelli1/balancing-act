@@ -28,12 +28,14 @@ function closeIntro() {
 dashboard.addEventListener('click', activateDashboard);
 transactions.addEventListener('click', activateTransactions);
 
+// Add active class to Dashboard nav item
 function activateDashboard() {
   profile.classList.remove('active');
   transactions.classList.remove('active');
   dashboard.classList.add('active');
 }
 
+// add active to transactions nav item
 function activateTransactions() {
   dashboard.classList.remove('active');
   profile.classList.remove('active');
