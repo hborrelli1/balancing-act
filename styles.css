@@ -4,6 +4,15 @@
   box-sizing:border-box;
 }
 
+/*
+ * Testing Purpose only
+ * Remove after the transaction and dashboard func is done
+ */
+#dashboard-content {
+  /* display:none; */
+}
+
+
 body {
   margin:0px;
   background-color:#F5F5F5;
@@ -86,7 +95,7 @@ main {
 
 .card {
   border-radius:4px;
-  box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.05);
   background-color:#fff;
   padding:20px;
   margin-bottom:20px;
@@ -137,7 +146,7 @@ main {
   margin-right:5%;
   float:left;
 }
-.quick-stats-card:nth-of-type(3) {
+.quick-cards-wrap .quick-stats-card:last-of-type {
   margin-right:0px;
 }
 
@@ -161,6 +170,7 @@ main {
   background-color:transparent;
   box-shadow:unset;
   margin-top:20px;
+  clear:both;
 }
 
 .accounts-card header,
@@ -254,4 +264,89 @@ table tbody tr td {
 
 .column2 {
   margin-right:0px;
+}
+
+#transactions-content header {
+  width:48%;
+
+}
+
+#transactions-content header h1,
+#transactions-content header .button-block {
+  display:inline-block;
+}
+
+#transactions-content header .button-block {
+  float:right;
+}
+
+#transactions-content .column1,
+#transactions-content .column2 {
+  max-height:84vh;
+  overflow-y:scroll;
+}
+
+#transactions-content .column2 {
+  width:44%;
+  margin-left:4%;
+}
+
+#transactions-content .new-transaction-card header {
+  margin:0 auto;
+}
+
+#transactions-content .new-transaction-card header h2 {
+  text-align:center;
+  margin:5px 0px 20px 0px;
+}
+
+#transactions-content .new-transaction-card form {
+  max-width:350px;
+  margin:0 auto;
+}
+
+#transactions-content .new-transaction-card form * {
+  display:block;
+}
+
+#transactions-content .new-transaction-card form label {
+  font-size:12px;
+}
+
+#transactions-content .new-transaction-card form input,
+#transactions-content .new-transaction-card form select {
+  width:100%;
+  margin-bottom:15px;
+  height: 30px;
+  padding: 0px 10px;
+  border-radius: 0px;
+  border: 0;
+  -moz-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.05);
+}
+
+#transactions-content .new-transaction-card form select {
+  background-color:#efefef;
+}
+
+#transactions-content .new-transaction-card form input[type="submit"] {
+  background-color:#1CA3BA;
+  padding:9px 20px;
+  color:#fff;
+  border-radius:40px;
+  text-decoration:none;
+  font-size:13px;
+  cursor:pointer;
+  letter-spacing:1px;
+  transition:all .3s;
+  border:0;
+  display:inline-block;
+  line-height:11px;
+  width:auto;
+}
+
+#transactions-content .new-transaction-card form input[type="submit"]:hover {
+  background-color:#127f92;
+  transition:all .3s;
 }
