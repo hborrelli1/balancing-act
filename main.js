@@ -186,10 +186,10 @@ function activateTransactions() {
       </select>
       <label for="payee">Payee:</label>
       <input type="text" name="payee" value="">
-      <label for="outflow">Outflow:</label>
-      <input type="text" name="outflow" value="">
-      <label for="category-custom">Category:</label>
-      <input type="text" name="category-custom" value="">
+      <label for="amount">Amount:</label>
+      <input type="text" name="amount" value="">
+      <label for="memo">Memo (optional):</label>
+      <input type="text" name="memo" value="">
       <input type="submit" name='submit' value="Log Expense">
     </form>
   </section>`;
