@@ -3,24 +3,21 @@ var closeBtn = document.querySelector('#close');
 var dashboardBtn = document.querySelector('#dashboard-btn');
 var transactionsBtn = document.querySelector('#transactions-btn');
 var profileBtn = document.querySelector('#profile-btn');
-var dashboardContent = document.querySelector('#dashboard-content');
+var dashboardBody = document.querySelector('#dashboard-content');
+var dashboardContent = document.querySelector('#dashboard-content').innerHTML;
 var transactionsContent = document.querySelector('#transactions-content');
-
-// Event Listeners
-dashboardBtn.addEventListener('click', activateDashboard);
-transactionsBtn.addEventListener('click', activateTransactions);
-closeBtn.addEventListener("click", closeIntro);
+var introBox = document.getElementById("intro-box");
 
 /*
- * Close Intro Box Even Listener and Function
+ * Close Intro Box Function
  */
 function closeIntro() {
   // Add class to #intro-box that changes margin-top
-  var introBox = document.getElementById("intro-box");
   introBox.classList.add('hidden');
 
   // Remove #introBox once CSS transition is complete
   function hideBox() {
+
     // Remove element
     introBox.remove();
   }
@@ -39,7 +36,7 @@ function activateTransactions() {
   transactionsBtn.classList.add('active');
 
   // Toggle Content
-  dashboardContent.style.display = "none";
+  dashboardBody.style.display = "none";
   transactionsContent.style.display = "block";
   transactionsContent.innerHTML = `<header>
     <h1>Transactions</h1>
@@ -199,12 +196,20 @@ function activateTransactions() {
  * Activate Dashboard View
  */
 function activateDashboard() {
+
   // Remove classes from other nav items
   profileBtn.classList.remove('active');
   transactionsBtn.classList.remove('active');
+
   // Add classes to clicked element
   dashboardBtn.classList.add('active');
+
   // Toggle Content
   transactionsContent.style.display = "none";
-  dashboardContent.style.display = "block";
+  dashboardBody.style.display = "block";
 }
+
+// Event Listeners
+dashboardBtn.addEventListener('click', activateDashboard);
+transactionsBtn.addEventListener('click', activateTransactions);
+closeBtn.addEventListener("click", closeIntro);
