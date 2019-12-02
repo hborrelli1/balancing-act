@@ -4,15 +4,6 @@
   box-sizing:border-box;
 }
 
-/*
- * Testing Purpose only
- * Remove after the transaction and dashboard func is done
- */
-#dashboard-content {
-  /* display:none; */
-}
-
-
 body {
   margin:0px;
   background-color:#F5F5F5;
@@ -268,7 +259,6 @@ table tbody tr td {
 
 #transactions-content header {
   width:48%;
-
 }
 
 #transactions-content header h1,
@@ -364,5 +354,5 @@ table tbody tr td {
 
 #transactions-content .button-block .button:hover {
   background-color:#1CA3BA;
-  color:#fff;``
+  color:#fff;
 }
