@@ -168,18 +168,25 @@ function activateTransactions() {
     <form class="" action="#" method="post">
       <label for="type-of">Type of Transaction:</label>
       <select name="type-of">
-        <option value="expense">Expense</option>
-        <option value="other-option">Other Option</option>
+        <option value="default">- Select One -</option>
+        <option value="inflow">Inflow</option>
+        <option value="outflow">Outflow</option>
       </select>
       <label for="category">Category:</label>
       <select name="category">
         <option value="default">- Select One -</option>
-        <option value="other-option">Other Option</option>
+        <option value="groceries">Groceries</option>
+        <option value="bills">Bills</option>
+        <option value="fun-money">Fun Money</option>
+        <option value="paycheck">Paycheck</option>
       </select>
       <label for="account-from">Account From:</label>
       <select name="account-from">
         <option value="default">- Select One -</option>
-        <option value="other-option">Other Option</option>
+        <option value="other-option">Checking</option>
+        <option value="other-option">Savings</option>
+        <option value="other-option">Amazon Credit</option>
+        <option value="other-option">Southwest </option>
       </select>
       <label for="payee">Payee:</label>
       <input type="text" name="payee" value="">
