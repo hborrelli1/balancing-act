@@ -80,7 +80,7 @@ a:hover {
 
 main {
   margin-left:80px;
-  overflow:auto;
+  /* overflow:auto; */
   padding:30px;
 }
 
@@ -250,6 +250,7 @@ table tbody tr td {
   width:48%;
   float:left;
   margin-right:4%;
+  margin-bottom:0px;
   overflow:hidden;
 }
 
@@ -279,6 +280,7 @@ table tbody tr td {
 #transactions-content .column2 {
   width:44%;
   margin-left:4%;
+  overflow-y:auto;
 }
 
 #transactions-content .new-transaction-card header {
@@ -287,7 +289,7 @@ table tbody tr td {
 
 #transactions-content .new-transaction-card header h2 {
   text-align:center;
-  margin:5px 0px 20px 0px;
+  margin:0px 0px 10px 0px;
 }
 
 #transactions-content .new-transaction-card form {
