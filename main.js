@@ -133,7 +133,7 @@ var transactionsInnerContent = `<header>
   <header>
     <h2>New Transaction</h2>
   </header>
-  <form class="" action="#" method="#">
+  <form class="" action="" method="">
     <label for="type-of">Type of Transaction:</label>
     <select name="type-of">
       <option value="default">- Select One -</option>
@@ -210,15 +210,19 @@ function newTransaction(event) {
 
   // Post New Transaction
   if (event.target.id === "new-transaction-btn") {
-
-    // Add text to message
-    var confirmMessage = `You expense of $87 has been logged.`;
-
+    var closeBtn = document.querySelector('#close-banner');
+    // Confirmation Message
+    var confirmMessage = `<span>You expense of $87 has been logged.</span><img id="close-banner" src="assets/close.svg" alt="Close">`;
 
     // Add class for styling transition
     var transactionMessage = document.getElementById("message");
     transactionMessage.innerHTML = confirmMessage;
     transactionMessage.classList.add('js-confirm-msg');
+
+    if (event.target.id === "close-banner") {
+      // Close banner
+      transactionMessage.innerHTML = "";
+    }
 
   }
 }

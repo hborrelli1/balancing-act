@@ -252,6 +252,7 @@ table tbody tr td {
   margin-right:4%;
   margin-bottom:0px;
   overflow:hidden;
+  position:relative;
 }
 
 .column2 {
@@ -281,6 +282,7 @@ table tbody tr td {
   width:44%;
   margin-left:4%;
   overflow-y:auto;
+  padding-bottom:30px;
 }
 
 #transactions-content .new-transaction-card header {
@@ -357,4 +359,29 @@ table tbody tr td {
 #transactions-content .button-block .button:hover {
   background-color:#1CA3BA;
   color:#fff;
+}
+
+#transactions-content .new-transaction-card #message {
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  padding:2px 20px;
+  margin:0px;
+}
+#transactions-content .new-transaction-card #message span {
+  font-size:12px;
+  line-height:16px;
+}
+
+#transactions-content .new-transaction-card #message #close-banner {
+  width:10px;
+  height:10px;
+  position:absolute;
+  right:20px;
+  top:calc(50% - 5px);
+}
+
+#message.js-confirm-msg {
+  background-color:#baffcf;
 }
