@@ -207,30 +207,31 @@ function activateDashboard() {
  * Transactions Events
  */
 function newTransaction(event) {
+  var messageCloseBtn = document.querySelector('#close-banner');
+  var transactionMessage = document.getElementById("message");
 
   // Post New Transaction
   if (event.target.id === "new-transaction-btn") {
     // Variables
     var inputs = document.querySelectorAll('input');
-    var closeBtn = document.querySelector('#close-banner');
-    var transactionMessage = document.getElementById("message");
-    var messageCloseBtn = document.querySelector('#close-banner');
 
     // Confirmation Message
     var confirmMessage = `<span>You expense of $87 has been logged.</span><img id="close-banner" src="assets/close.svg" alt="Close">`;
 
-
     // Add class for styling transition
     transactionMessage.innerHTML = confirmMessage;
     transactionMessage.classList.add('js-confirm-msg');
-
-    // Close Message Box
-    function closeMessage() {
-      transactionMessage.innerHTML = "";
-    }
-
-    messageCloseBtn.addEventListener('click', closeMessage);
   }
+
+  if (event.target.id === 'close-banner') {
+    // Close Message Box
+    // function closeMessage() {
+      transactionMessage.innerHTML = "";
+      transactionMessage.classList.remove('js-confirm-msg');
+      // console.log(transactionMessage);
+    // }
+  }
+  // messageCloseBtn.addEventListener('click', closeMessage);
 }
 
 /*
@@ -255,4 +256,4 @@ dashboardBtn.addEventListener('click', activateDashboard);
 transactionsBtn.addEventListener('click', activateTransactions);
 closeBtn.addEventListener("click", closeIntro);
 transactionsContent.addEventListener("click", newTransaction);
-transactionsContent.addEventListener("click", newTransaction);
+// transactionsContent.addEventListener("click", newTransaction);
