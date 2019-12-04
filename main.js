@@ -135,13 +135,13 @@ var transactionsInnerContent = `<header>
   </header>
   <form class="" action="" method="">
     <label for="type-of">Type of Transaction:</label>
-    <select name="type-of">
+    <select name="type-of" required>
       <option value="default">- Select One -</option>
       <option value="inflow">Inflow</option>
       <option value="outflow">Outflow</option>
     </select>
     <label for="category">Category:</label>
-    <select name="category">
+    <select name="category" required>
       <option value="default">- Select One -</option>
       <option value="groceries">Groceries</option>
       <option value="bills">Bills</option>
@@ -149,7 +149,7 @@ var transactionsInnerContent = `<header>
       <option value="paycheck">Paycheck</option>
     </select>
     <label for="account-from">Account From:</label>
-    <select name="account-from">
+    <select name="account-from" required>
       <option value="default">- Select One -</option>
       <option value="other-option">Checking</option>
       <option value="other-option">Savings</option>
