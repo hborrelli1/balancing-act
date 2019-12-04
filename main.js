@@ -157,12 +157,12 @@ var transactionsInnerContent = `<header>
       <option value="other-option">Southwest Credit</option>
     </select>
     <label for="payee">Payee:</label>
-    <input type="text" name="payee" value="">
+    <input type="text" name="payee" value="" required>
     <label for="amount">Amount:</label>
-    <input type="text" name="amount" value="">
+    <input type="text" name="amount" value="" required>
     <label for="memo">Memo (optional):</label>
     <input type="text" name="memo" value="">
-    <input id="new-transaction-btn" type="submit" name='submit' value="Log Expense">
+    <button id="new-transaction-btn" type="button" name='submit'>Log Expense</button>
   </form>
   <p id="message"></p>
 </section>`;
@@ -210,24 +210,28 @@ function newTransaction(event) {
 
   // Post New Transaction
   if (event.target.id === "new-transaction-btn") {
+    // Variables
+    var inputs = document.querySelectorAll('input');
     var closeBtn = document.querySelector('#close-banner');
+    var transactionMessage = document.getElementById("message");
+    var messageCloseBtn = document.querySelector('#close-banner');
+
     // Confirmation Message
     var confirmMessage = `<span>You expense of $87 has been logged.</span><img id="close-banner" src="assets/close.svg" alt="Close">`;
 
+
     // Add class for styling transition
-    var transactionMessage = document.getElementById("message");
     transactionMessage.innerHTML = confirmMessage;
     transactionMessage.classList.add('js-confirm-msg');
 
-    if (event.target.id === "close-banner") {
-      // Close banner
+    // Close Message Box
+    function closeMessage() {
       transactionMessage.innerHTML = "";
     }
 
+    messageCloseBtn.addEventListener('click', closeMessage);
   }
 }
-
-
 
 /*
  * Activate Transactions View
@@ -250,4 +254,5 @@ function activateTransactions() {
 dashboardBtn.addEventListener('click', activateDashboard);
 transactionsBtn.addEventListener('click', activateTransactions);
 closeBtn.addEventListener("click", closeIntro);
+transactionsContent.addEventListener("click", newTransaction);
 transactionsContent.addEventListener("click", newTransaction);

@@ -380,6 +380,7 @@ table tbody tr td {
   position:absolute;
   right:20px;
   top:calc(50% - 5px);
+  cursor:pointer;
 }
 
 #message.js-confirm-msg {
