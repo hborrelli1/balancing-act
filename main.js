@@ -135,13 +135,13 @@ var transactionsInnerContent = `<header>
   </header>
   <form class="" action="" method="">
     <label for="type-of">Type of Transaction:</label>
-    <select name="type-of" required>
+    <select id="transactionType" name="type-of" required>
       <option value="default">- Select One -</option>
       <option value="inflow">Inflow</option>
       <option value="outflow">Outflow</option>
     </select>
     <label for="category">Category:</label>
-    <select name="category" required>
+    <select id="categorySelect" name="category" required>
       <option value="default">- Select One -</option>
       <option value="groceries">Groceries</option>
       <option value="bills">Bills</option>
@@ -149,7 +149,7 @@ var transactionsInnerContent = `<header>
       <option value="paycheck">Paycheck</option>
     </select>
     <label for="account-from">Account From:</label>
-    <select name="account-from" required>
+    <select id="accountFrom" name="account-from" required>
       <option value="default">- Select One -</option>
       <option value="other-option">Checking</option>
       <option value="other-option">Savings</option>
@@ -157,11 +157,11 @@ var transactionsInnerContent = `<header>
       <option value="other-option">Southwest Credit</option>
     </select>
     <label for="payee">Payee:</label>
-    <input type="text" name="payee" value="" required>
+    <input id="payee" type="text" name="payee" value="" required>
     <label for="amount">Amount:</label>
-    <input type="text" name="amount" value="" required>
+    <input id="amount" type="text" name="amount" value="" required>
     <label for="memo">Memo (optional):</label>
-    <input type="text" name="memo" value="">
+    <input id="memo" type="text" name="memo" value="">
     <button id="new-transaction-btn" type="button" name='submit'>Log Expense</button>
   </form>
   <p id="message"></p>
@@ -243,4 +243,10 @@ function activateTransactions() {
   transactionsContent.style.display = "block";
   // transactionsContent.innerHTML = ;
   transactionsContent.innerHTML = transactionsInnerContent;
+}
+
+function validateNewTransaction() {
+  // if () {
+  //
+  // }
 }
