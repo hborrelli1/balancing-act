@@ -132,18 +132,13 @@ main {
 }
 
 .quick-cards-wrap {
-  display:block;
+  display:flex;
+  justify-content:space-between;
   width:100%;
-  overflow:auto;
 }
 
 .quick-stats-card {
   width:30%;
-  margin-right:5%;
-  float:left;
-}
-.quick-cards-wrap .quick-stats-card:last-of-type {
-  margin-right:0px;
 }
 
 .quick-stats-card .title,
@@ -287,7 +282,7 @@ table tbody tr td {
   width:44%;
   margin-left:4%;
   overflow-y:auto;
-  padding-bottom:30px;
+  padding-bottom:40px;
 }
 
 #transactions-content .new-transaction-card header {
