@@ -167,9 +167,16 @@ var transactionsInnerContent = `<header>
   <p id="message"></p>
 </section>`;
 
-/*
- * Close Intro Box Function
- */
+
+// Event Listeners
+dashboardBtn.addEventListener('click', activateDashboard);
+transactionsBtn.addEventListener('click', activateTransactions);
+closeBtn.addEventListener("click", closeIntro);
+transactionsContent.addEventListener("click", newTransaction);
+// transactionsContent.addEventListener("click", newTransaction);
+
+
+// Close Intro Box Function
 function closeIntro() {
   // Add class to #intro-box that changes margin-top
   introBox.classList.add('hidden');
@@ -184,10 +191,7 @@ function closeIntro() {
   setTimeout(hideBox, 500);
 }
 
-
-/*
- * Activate Dashboard View
- */
+// Activate Dashboard View
 function activateDashboard() {
 
   // Remove classes from other nav items
@@ -202,10 +206,7 @@ function activateDashboard() {
   dashboardBody.style.display = "block";
 }
 
-
-/*
- * Transactions Events
- */
+// Transactions Events
 function newTransaction(event) {
   var messageCloseBtn = document.querySelector('#close-banner');
   var transactionMessage = document.getElementById("message");
@@ -224,19 +225,12 @@ function newTransaction(event) {
   }
 
   if (event.target.id === 'close-banner') {
-    // Close Message Box
-    // function closeMessage() {
-      transactionMessage.innerHTML = "";
-      transactionMessage.classList.remove('js-confirm-msg');
-      // console.log(transactionMessage);
-    // }
+    transactionMessage.innerHTML = "";
+    transactionMessage.classList.remove('js-confirm-msg');
   }
-  // messageCloseBtn.addEventListener('click', closeMessage);
 }
 
-/*
- * Activate Transactions View
- */
+// Activate Transactions View
 function activateTransactions() {
   // Remove classes from other nav items
   dashboardBtn.classList.remove('active');
@@ -250,10 +244,3 @@ function activateTransactions() {
   // transactionsContent.innerHTML = ;
   transactionsContent.innerHTML = transactionsInnerContent;
 }
-
-// Event Listeners
-dashboardBtn.addEventListener('click', activateDashboard);
-transactionsBtn.addEventListener('click', activateTransactions);
-closeBtn.addEventListener("click", closeIntro);
-transactionsContent.addEventListener("click", newTransaction);
-// transactionsContent.addEventListener("click", newTransaction);
