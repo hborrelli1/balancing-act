@@ -167,7 +167,6 @@ var transactionsInnerContent = `<header>
   <p id="message"></p>
 </section>`;
 
-
 // Event Listeners
 dashboardBtn.addEventListener('click', activateDashboard);
 transactionsBtn.addEventListener('click', activateTransactions);
@@ -216,6 +215,9 @@ function newTransaction(event) {
     // Variables
     var inputs = document.querySelectorAll('input');
 
+    // Validate form
+    validateNewTransaction();
+
     // Confirmation Message
     var confirmMessage = `<span>You expense of $87 has been logged.</span><img id="close-banner" src="assets/close.svg" alt="Close">`;
 
@@ -246,7 +248,19 @@ function activateTransactions() {
 }
 
 function validateNewTransaction() {
-  // if () {
-  //
-  // }
+  // Form Inputs
+  var transactionType = document.getElementById('transactionType');
+  var categorySelect = document.getElementById('categorySelect');
+  var accountForm = document.getElementById('accountFrom');
+  var payee = document.getElementById('payee');
+  var amount = document.getElementById('amount');
+  var memo = document.getElementById('memo');
+
+  if (amount.value == '') {
+    amount.disabled = true;
+    amount.classList.add('js-error');
+  } else {
+    amount.disabled = false;
+    amount.classList.remove('js-error');
+  }
 }
