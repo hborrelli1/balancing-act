@@ -218,10 +218,14 @@ function newTransaction(event) {
     var inputs = document.querySelectorAll('input');
 
     // Validate form
-    validateNewTransaction();
+    if (validateNewTransaction() == true) {
+      // Confirmation Message
+      displayTransactionMessage();
+    } else {
+      return false;
+    }
+    // validateNewTransaction();
 
-    // Confirmation Message
-    displayTransactionMessage();
   }
 
   if (event.target.id === 'close-banner') {
@@ -281,23 +285,13 @@ function activateTransactions() {
 }
 
 function validateNewTransaction() {
-  // Form Inputs
-  // var transactionType = document.getElementById('transactionType');
-  // var categorySelect = document.getElementById('categorySelect');
-  // var accountFrom = document.getElementById('accountFrom');
-  // var payee = document.getElementById('payee');
-  // var amount = document.getElementById('amount');
-  // var memo = document.getElementById('memo');
-
   var selects = document.querySelectorAll('#newTransactionForm select');
   var inputs = document.querySelectorAll('#newTransactionForm input[required]');
-
 
   for (var i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('input', removeErrorClass);
     if (inputs[i].value == '') {
       inputs[i].classList.add('js-error');
-      // console.log(inputs[i]);
     } else {
       inputs[i].classList.remove('js-error');
     }
@@ -311,4 +305,21 @@ function validateNewTransaction() {
       selects[j].classList.remove('js-error');
     }
   }
+
+  for (var k = 0; k < inputs.length; k++) {
+    if (inputs[k].className === 'js-error') {
+      console.log('validation fialed');
+      return false;
+    }
+  }
+
+  for (var l = 0; l < selects.length; l++) {
+    if (selects[l].className === 'js-error') {
+      console.log('validation fialed');
+      return false;
+    }
+  }
+
+  console.log('validated');
+  return true;
 }
