@@ -78,6 +78,11 @@ a:hover {
   transition:all .3s;
 }
 
+/* Error messages */
+.js-error {
+  border:2px solid red !important;
+}
+
 main {
   margin-left:80px;
   /* overflow:auto; */

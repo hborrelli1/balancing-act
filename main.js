@@ -133,7 +133,7 @@ var transactionsInnerContent = `<header>
   <header>
     <h2>New Transaction</h2>
   </header>
-  <form class="" action="" method="">
+  <form id="newTransactionForm" class="" action="" method="">
     <label for="type-of">Type of Transaction:</label>
     <select id="transactionType" name="type-of" required>
       <option value="default">- Select One -</option>
@@ -210,6 +210,8 @@ function newTransaction(event) {
   var messageCloseBtn = document.querySelector('#close-banner');
   var transactionMessage = document.getElementById("message");
 
+  // newTransactionForm.addEventListener('input', removeErrorClass);
+
   // Post New Transaction
   if (event.target.id === "new-transaction-btn") {
     // Variables
@@ -219,6 +221,15 @@ function newTransaction(event) {
     validateNewTransaction();
 
     // Confirmation Message
+    displayTransactionMessage();
+  }
+
+  if (event.target.id === 'close-banner') {
+    removeTransactionMessage();
+  }
+
+  function displayTransactionMessage() {
+    // Confirmation Message
     var confirmMessage = `<span>You expense of $87 has been logged.</span><img id="close-banner" src="assets/close.svg" alt="Close">`;
 
     // Add class for styling transition
@@ -226,11 +237,25 @@ function newTransaction(event) {
     transactionMessage.classList.add('js-confirm-msg');
   }
 
-  if (event.target.id === 'close-banner') {
+  function removeTransactionMessage() {
     transactionMessage.innerHTML = "";
     transactionMessage.classList.remove('js-confirm-msg');
   }
+
+  removeErrorClass();
 }
+
+function removeErrorClass() {
+  var inputs = document.querySelectorAll('input');
+  // var selects = document.querySelectorAll('select');
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i] != '') {
+      this.classList.remove('js-error');
+      // console.log(this);
+    }
+  }
+}
+
 
 // Activate Transactions View
 function activateTransactions() {
@@ -249,18 +274,32 @@ function activateTransactions() {
 
 function validateNewTransaction() {
   // Form Inputs
-  var transactionType = document.getElementById('transactionType');
-  var categorySelect = document.getElementById('categorySelect');
-  var accountForm = document.getElementById('accountFrom');
-  var payee = document.getElementById('payee');
-  var amount = document.getElementById('amount');
-  var memo = document.getElementById('memo');
+  // var transactionType = document.getElementById('transactionType');
+  // var categorySelect = document.getElementById('categorySelect');
+  // var accountFrom = document.getElementById('accountFrom');
+  // var payee = document.getElementById('payee');
+  // var amount = document.getElementById('amount');
+  // var memo = document.getElementById('memo');
 
-  if (amount.value == '') {
-    amount.disabled = true;
-    amount.classList.add('js-error');
-  } else {
-    amount.disabled = false;
-    amount.classList.remove('js-error');
+  var selects = document.querySelectorAll('#newTransactionForm select');
+  var inputs = document.querySelectorAll('#newTransactionForm input[required]');
+
+
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener('input', removeErrorClass);
+    if (inputs[i].value == '') {
+      inputs[i].classList.add('js-error');
+      // console.log(inputs[i]);
+    } else {
+      inputs[i].classList.remove('js-error');
+    }
+  }
+
+  for (var j = 0; j < selects.length; j++) {
+    if (selects[j].value == 'default') {
+      selects[j].classList.add('js-error');
+    } else {
+      selects[j].classList.remove('js-error');
+    }
   }
 }
