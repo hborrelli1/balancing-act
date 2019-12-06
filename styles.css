@@ -282,7 +282,7 @@ table tbody tr td {
   width:44%;
   margin-left:4%;
   overflow-y:auto;
-  padding-bottom:30px;
+  padding-bottom:40px;
 }
 
 #transactions-content .new-transaction-card header {
