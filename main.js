@@ -242,14 +242,22 @@ function newTransaction(event) {
     transactionMessage.classList.remove('js-confirm-msg');
   }
 
-  removeErrorClass();
+  // removeErrorClass();
 }
 
 function removeErrorClass() {
   var inputs = document.querySelectorAll('input');
-  // var selects = document.querySelectorAll('select');
+  var selects = document.querySelectorAll('select');
+
   for (var i = 0; i < inputs.length; i++) {
     if (inputs[i] != '') {
+      this.classList.remove('js-error');
+      // console.log(this);
+    }
+  }
+
+  for (var j = 0; j < selects.length; j++) {
+    if (selects[j] != '') {
       this.classList.remove('js-error');
       // console.log(this);
     }
@@ -296,6 +304,7 @@ function validateNewTransaction() {
   }
 
   for (var j = 0; j < selects.length; j++) {
+    selects[j].addEventListener('input', removeErrorClass);
     if (selects[j].value == 'default') {
       selects[j].classList.add('js-error');
     } else {
