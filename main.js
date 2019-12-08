@@ -172,7 +172,7 @@ var transactionsInnerContent = `<header>
 var accountHtml = `<section class="column1">
   <h2>Your Profile</h2>
   <section class="card card_profile">
-    <h4>Oscar Holt</h4>
+    <h3>Oscar Holt</h3>
     <p id="location">Denver, CO</p>
     <p id="memberLength">Member Since: 2014</p>
     <p id="birthday">Birthday: December 19, 2011</p>
