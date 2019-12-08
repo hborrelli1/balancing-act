@@ -1,4 +1,6 @@
 // Global Variables
+var nav = document.querySelector('#nav-list');
+var navItems = document.querySelectorAll('nav .nav-item');
 var closeBtn = document.querySelector('#close');
 var dashboardBtn = document.querySelector('#dashboard-btn');
 var transactionsBtn = document.querySelector('#transactions-btn');
@@ -233,12 +235,60 @@ var accountHtml = `<section class="column1">
 </section>`;
 
 // Event Listeners
-dashboardBtn.addEventListener('click', activateDashboard);
-transactionsBtn.addEventListener('click', activateTransactions);
+nav.addEventListener('click', changeView);
 closeBtn.addEventListener("click", closeIntro);
 transactionsContent.addEventListener("click", newTransaction);
-profileBtn.addEventListener("click", activateProfile);
 
+function changeView(event) {
+  if (event.target.id === 'dashboard-btn') {
+    // Remove classes from other nav items
+    changeNavItem();
+
+    // Add classes to clicked element
+    dashboardBtn.closest('.nav-item').classList.add('active');
+
+    // Toggle Content
+    transactionsContent.style.display = "none";
+    profileContent.style.display = "none";
+    dashboardBody.style.display = "block";
+  }
+
+  if (event.target.id === 'transactions-btn') {
+    // Remove classes from other nav items
+    changeNavItem();
+
+    // Add class to clicked element
+    transactionsBtn.closest('.nav-item').classList.add('active');
+
+    // Toggle Content
+    dashboardBody.style.display = "none";
+    profileContent.style.display = "none";
+    transactionsContent.style.display = "block";
+    // transactionsContent.innerHTML = ;
+    transactionsContent.innerHTML = transactionsInnerContent;
+  }
+
+  if (event.target.id === 'profile-btn') {
+    // Remove classes from other nav items
+    changeNavItem();
+
+    // Add class to clicked element
+    profileBtn.closest('.nav-item').classList.add('active');
+
+    // Toggle Content
+    dashboardBody.style.display = "none";
+    transactionsContent.style.display = "none";
+    profileContent.style.display = "block";
+
+    profileContent.innerHTML = accountHtml;
+  }
+}
+
+function changeNavItem() {
+  for (var i = 0; i < navItems.length; i++) {
+    navItems[i].classList.remove('active');
+  }
+}
 
 // Close Intro Box Function
 function closeIntro() {
@@ -253,22 +303,6 @@ function closeIntro() {
   }
 
   setTimeout(hideBox, 500);
-}
-
-// Activate Dashboard View
-function activateDashboard() {
-
-  // Remove classes from other nav items
-  profileBtn.classList.remove('active');
-  transactionsBtn.classList.remove('active');
-
-  // Add classes to clicked element
-  dashboardBtn.classList.add('active');
-
-  // Toggle Content
-  transactionsContent.style.display = "none";
-  profileContent.style.display = "none";
-  dashboardBody.style.display = "block";
 }
 
 // Transactions Events
@@ -334,23 +368,6 @@ function removeErrorClass() {
   }
 }
 
-
-// Activate Transactions View
-function activateTransactions() {
-  // Remove classes from other nav items
-  dashboardBtn.classList.remove('active');
-  profileBtn.classList.remove('active');
-  // Add class to clicked element
-  transactionsBtn.classList.add('active');
-
-  // Toggle Content
-  dashboardBody.style.display = "none";
-  profileContent.style.display = "none";
-  transactionsContent.style.display = "block";
-  // transactionsContent.innerHTML = ;
-  transactionsContent.innerHTML = transactionsInnerContent;
-}
-
 function validateNewTransaction() {
   var selects = document.querySelectorAll('#newTransactionForm select');
   var inputs = document.querySelectorAll('#newTransactionForm input[required]');
@@ -389,19 +406,4 @@ function validateNewTransaction() {
 
   console.log('validated');
   return true;
-}
-
-function activateProfile() {
-  // Remove classes from other nav items
-  dashboardBtn.classList.remove('active');
-  transactionsBtn.classList.remove('active');
-  // Add class to clicked element
-  profileBtn.classList.add('active');
-
-  // Toggle Content
-  dashboardBody.style.display = "none";
-  transactionsContent.style.display = "none";
-  profileContent.style.display = "block";
-
-  profileContent.innerHTML = accountHtml;
 }
