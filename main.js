@@ -178,6 +178,18 @@ var accountHtml = `<section class="column1">
   </section>
 </section>
 <section class="column2">
+</section>
+<section class="column2">
+  <h2>Your Accounts</h2>
+  <ul class="accounts-list">
+    <li class="card card-account-item">
+      <p class="account-name">Wells Fargo</p>
+      <p class="account-type">Savings</p>
+      <p class="account-status">Status:<span>Active</span></p>
+      <button id="edit-account">Edit</button>
+      <button id="delete-account">Delete</button>
+    </li>
+  </ul>
 </section>`;
 
 // Event Listeners

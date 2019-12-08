@@ -394,3 +394,15 @@ table tbody tr td {
 .card_profile button {
   float:right;
 }
+
+.accounts-list {
+  padding-left:0px;
+}
+.card-account-item {
+  list-style-type:none;
+  display: flex;
+}
+
+.card-account-item .account-name {
+
+}
