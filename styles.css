@@ -386,3 +386,11 @@ table tbody tr td {
 #message.js-confirm-msg {
   background-color:#baffcf;
 }
+
+.card_profile {
+  max-width:80%;
+  overflow:auto;
+}
+.card_profile button {
+  float:right;
+}

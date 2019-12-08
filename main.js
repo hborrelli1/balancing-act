@@ -8,6 +8,7 @@ var dashboardBody = document.querySelector('#dashboard-content');
 var introBox = document.getElementById("intro-box");
 var newTransactionBtn = document.getElementById("new-transaction-btn");
 var transactionsContent = document.querySelector('#transactions-content');
+var profileContent = document.querySelector('#profile-content');
 var transactionsInnerContent = `<header>
   <h1>Transactions</h1>
   <section class="button-block">
@@ -166,13 +167,25 @@ var transactionsInnerContent = `<header>
   </form>
   <p id="message"></p>
 </section>`;
+var accountHtml = `<section class="column1">
+  <h2>Your Profile</h2>
+  <section class="card card_profile">
+    <h4>Oscar Holt</h4>
+    <p id="location">Denver, CO</p>
+    <p id="memberLength">Member Since: 2014</p>
+    <p id="birthday">Birthday: December 19, 2011</p>
+    <button id="editInfoBtn">Edit My Info</button>
+  </section>
+</section>
+<section class="column2">
+</section>`;
 
 // Event Listeners
 dashboardBtn.addEventListener('click', activateDashboard);
 transactionsBtn.addEventListener('click', activateTransactions);
 closeBtn.addEventListener("click", closeIntro);
 transactionsContent.addEventListener("click", newTransaction);
-// transactionsContent.addEventListener("click", newTransaction);
+profileBtn.addEventListener("click", activateProfile);
 
 
 // Close Intro Box Function
@@ -202,6 +215,7 @@ function activateDashboard() {
 
   // Toggle Content
   transactionsContent.style.display = "none";
+  profileContent.style.display = "none";
   dashboardBody.style.display = "block";
 }
 
@@ -279,6 +293,7 @@ function activateTransactions() {
 
   // Toggle Content
   dashboardBody.style.display = "none";
+  profileContent.style.display = "none";
   transactionsContent.style.display = "block";
   // transactionsContent.innerHTML = ;
   transactionsContent.innerHTML = transactionsInnerContent;
@@ -322,4 +337,19 @@ function validateNewTransaction() {
 
   console.log('validated');
   return true;
+}
+
+function activateProfile() {
+  // Remove classes from other nav items
+  dashboardBtn.classList.remove('active');
+  transactionsBtn.classList.remove('active');
+  // Add class to clicked element
+  profileBtn.classList.add('active');
+
+  // Toggle Content
+  dashboardBody.style.display = "none";
+  transactionsContent.style.display = "none";
+  profileContent.style.display = "block";
+
+  profileContent.innerHTML = accountHtml;
 }
