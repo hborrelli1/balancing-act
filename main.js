@@ -178,18 +178,58 @@ var accountHtml = `<section class="column1">
   </section>
 </section>
 <section class="column2">
-</section>
-<section class="column2">
   <h2>Your Accounts</h2>
   <ul class="accounts-list">
     <li class="card card-account-item">
       <p class="account-name">Wells Fargo</p>
       <p class="account-type">Savings</p>
-      <p class="account-status">Status:<span>Active</span></p>
+      <p class="account-status">Status: <span>Active</span></p>
+      <button id="edit-account">Edit</button>
+      <button id="delete-account">Delete</button>
+    </li>
+    <li class="card card-account-item">
+      <p class="account-name">Wells Fargo</p>
+      <p class="account-type">Checking</p>
+      <p class="account-status">Status: <span>Active</span></p>
+      <button id="edit-account">Edit</button>
+      <button id="delete-account">Delete</button>
+    </li>
+    <li class="card card-account-item">
+      <p class="account-name">Amazon Credit</p>
+      <p class="account-type">Southwest Card</p>
+      <p class="account-status">Status: <span>Active</span></p>
+      <button id="edit-account">Edit</button>
+      <button id="delete-account">Delete</button>
+    </li>
+    <li class="card card-account-item">
+      <p class="account-name">Amazon Credit</p>
+      <p class="account-type">Credit Card</p>
+      <p class="account-status">Status: <span>Active</span></p>
       <button id="edit-account">Edit</button>
       <button id="delete-account">Delete</button>
     </li>
   </ul>
+  <section class="card card-add-account">
+    <h2>Add an Account</h2>
+    <form>
+      <fieldset>
+        <label for="type">Type:</label>
+        <input type="text" name="type">
+      </fieldset>
+      <fieldset>
+        <label for="nickname">Nickname:</label>
+        <input type="text" name="nickname">
+      </fieldset>
+      <fieldset>
+        <label for="status">Status:</label>
+        <select class="" name="Status">
+          <option value="default">Active</option>
+          <option value="disabled">Disabled</option>
+        </select>
+      </fieldset>
+      <button type="button" name="button">Add Account</button>
+    </form>
+  </section>
 </section>`;
 
 // Event Listeners

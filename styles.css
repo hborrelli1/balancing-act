@@ -303,12 +303,13 @@ table tbody tr td {
   display:block;
 }
 
-#transactions-content .new-transaction-card form label {
+form label {
   font-size:12px;
+  display: block;
 }
 
-#transactions-content .new-transaction-card form input,
-#transactions-content .new-transaction-card form select {
+form input,
+form select {
   width:100%;
   margin-bottom:15px;
   height: 30px;
@@ -320,11 +321,11 @@ table tbody tr td {
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.05);
 }
 
-#transactions-content .new-transaction-card form select {
+ form select {
   background-color:#efefef;
 }
 
-#transactions-content .new-transaction-card form input[type="submit"] {
+form input[type="submit"] {
   background-color:#1CA3BA;
   padding:9px 20px;
   color:#fff;
@@ -387,6 +388,14 @@ table tbody tr td {
   background-color:#baffcf;
 }
 
+#profile-content .column1 {
+  width:38%;
+}
+
+#profile-content .column2 {
+  width:58%;
+}
+
 .card_profile {
   max-width:80%;
   overflow:auto;
@@ -401,8 +410,70 @@ table tbody tr td {
 .card-account-item {
   list-style-type:none;
   display: flex;
+  align-items: center;
 }
 
-.card-account-item .account-name {
+.card-account-item * {
+  flex:1;
+  margin:0px;
+}
 
+.card-account-item .account-status span {
+  color:#007f00;
+}
+
+.card-account-item button {
+  flex: none;
+  padding: 4px 10px;
+  width: 80px;
+  margin-right: 10px;
+  font-size:12px;
+}
+
+.card-account-item button:last-of-type {
+  margin-right:0px;
+}
+
+.card-account-item #delete-account {
+  background-color:#ee3c4c;
+}
+
+.card-account-item #delete-account:hover {
+  background-color:#ca2c3a;
+}
+
+.card-add-account h2 {
+  margin-top:0px;
+}
+
+.card-add-account form {
+  display:flex;
+  font-size:18px;
+}
+
+.card-add-account fieldset {
+  margin:0px;
+  padding:0px;
+  border:0;
+  flex:1;
+  margin-right:20px;
+}
+
+.card-add-account label {
+  font-size:15px;
+}
+
+.card-add-account fieldset input,
+.card-add-account fieldset select {
+  margin-bottom:0px;
+}
+
+.card-add-account fieldset select {
+  width:100px;
+}
+
+.card-add-account button {
+  height:30px;
+  align-self:flex-end;
+  padding:5px 20px;
 }
