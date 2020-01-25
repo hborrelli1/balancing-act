@@ -241,53 +241,60 @@ transactionsContent.addEventListener("click", newTransaction);
 
 function changeView(event) {
   if (event.target.id === 'dashboard-btn') {
-    // Remove classes from other nav items
-    changeNavItem();
-
-    // Add classes to clicked element
-    dashboardBtn.closest('.nav-item').classList.add('active');
-
-    // Toggle Content
-    transactionsContent.style.display = "none";
-    profileContent.style.display = "none";
-    dashboardBody.style.display = "block";
+    showDashboardView();
   }
-
   if (event.target.id === 'transactions-btn') {
-    // Remove classes from other nav items
-    changeNavItem();
+    showTransactionsView();
 
-    // Add class to clicked element
-    transactionsBtn.closest('.nav-item').classList.add('active');
-
-    // Toggle Content
-    dashboardBody.style.display = "none";
-    profileContent.style.display = "none";
-    transactionsContent.style.display = "block";
-    // transactionsContent.innerHTML = ;
     transactionsContent.innerHTML = transactionsInnerContent;
   }
-
   if (event.target.id === 'profile-btn') {
-    // Remove classes from other nav items
-    changeNavItem();
-
-    // Add class to clicked element
-    profileBtn.closest('.nav-item').classList.add('active');
-
-    // Toggle Content
-    dashboardBody.style.display = "none";
-    transactionsContent.style.display = "none";
-    profileContent.style.display = "block";
-
+    showProfileView();
     profileContent.innerHTML = accountHtml;
   }
 }
 
+function showDashboardView() {
+  // Remove classes from other nav items
+  changeNavItem();
+
+  // Add classes to clicked element
+  dashboardBtn.closest('.nav-item').classList.add('active');
+
+  // Toggle Content
+  transactionsContent.style.display = "none";
+  profileContent.style.display = "none";
+  dashboardBody.style.display = "block";
+}
+
+function showTransactionsView() {
+  // Remove classes from other nav items
+  changeNavItem();
+
+  // Add class to clicked element
+  transactionsBtn.closest('.nav-item').classList.add('active');
+
+  // Toggle Content
+  dashboardBody.style.display = "none";
+  profileContent.style.display = "none";
+  transactionsContent.style.display = "block";
+}
+
+function showProfileView() {
+  // Remove classes from other nav items
+  changeNavItem();
+
+  // Add class to clicked element
+  profileBtn.closest('.nav-item').classList.add('active');
+
+  // Toggle Content
+  dashboardBody.style.display = "none";
+  transactionsContent.style.display = "none";
+  profileContent.style.display = "block";
+}
+
 function changeNavItem() {
-  for (var i = 0; i < navItems.length; i++) {
-    navItems[i].classList.remove('active');
-  }
+  navItems.forEach(item => item.classList.remove('active'));
 }
 
 // Close Intro Box Function
@@ -297,7 +304,6 @@ function closeIntro() {
 
   // Remove #introBox once CSS transition is complete
   function hideBox() {
-
     // Remove element
     introBox.remove();
   }
